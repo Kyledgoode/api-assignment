@@ -38,6 +38,32 @@ let books = [
     'DELETE /api/books/:id': 'Delete a book'
 */
 
+function resetBooks() {
+    books = [
+        {
+            id: 1,
+            title: "The Great Gatsby",
+            author: "F. Scott Fitzgerald",
+            genre: "Fiction",
+            copiesAvailable: 5
+        },
+        {
+            id: 2,
+            title: "To Kill a Mockingbird",
+            author: "Harper Lee",
+            genre: "Fiction",
+            copiesAvailable: 3
+        },
+        {
+            id: 3,
+            title: "1984",
+            author: "George Orwell",
+            genre: "Dystopian Fiction",
+            copiesAvailable: 7
+        }
+    ];
+}
+
 app.get('/', (req, res) => {
     res.json({
         message: "Welcome to the Bookstore API!" ,
