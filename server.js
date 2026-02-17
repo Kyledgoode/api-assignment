@@ -128,7 +128,7 @@ app.delete('/api/books/:id', (req, res) => {
     }
 
     const deletedBook = books.splice(bookIndex, 1)[0];
-    res.json({ message: "Book deleted successfully", book: deletedBook });
+    res.json({ message: "Book deleted", book: deletedBook });
 });
 
 if (require.main === module) {
@@ -137,4 +137,4 @@ if (require.main === module) {
     });
 }
 
-module.exports = app;
+module.exports = { app, resetBooks };

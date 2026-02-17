@@ -37,7 +37,7 @@ describe("Books API", () => {
         const response = await request(app).post('/api/books').send(newBook);
         expect(response.status).toBe(201);
         expect(response.body).toHaveProperty('id', 4);
-        expect(response.title).toBe('Project Hail Mary');
+        expect(response.body.title).toBe('Project Hail Mary');
 
         const all = await request(app).get('/api/books');
         expect(all.body).toHaveLength(4);
